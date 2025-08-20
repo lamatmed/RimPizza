@@ -1,0 +1,325 @@
+/* eslint-disable react/no-unescaped-entities */
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Send,
+  Pizza,
+  MapPin,
+  Phone,
+  Clock,
+  Heart,
+  CreditCard,
+  Shield,
+  Truck,
+  Award,
+  Pocket,
+} from 'lucide-react';
+import Link from 'next/link';
+
+export default function Footer() {
+  return (
+    <footer className='relative bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden border-t border-gray-200'>
+      {/* Motif de fond */}
+      <div className='absolute inset-0 opacity-10'>
+        <div className='absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23f59e0b" fill-opacity="0.2"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")]'></div>
+      </div>
+
+      {/* Section Newsletter */}
+      <div className='relative border-b border-gray-200'>
+        <div className='container mx-auto px-4 py-12 md:py-16'>
+          <div className='grid lg:grid-cols-2 gap-8 md:gap-12 items-center'>
+            <div className='text-center lg:text-left'>
+              <h3 className='text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4'>
+                <span className='bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent'>
+                  Restez informé ! 🍕
+                </span>
+              </h3>
+              <p className='text-lg md:text-xl text-gray-600 leading-relaxed'>
+                Recevez des offres exclusives, les nouveaux lancements de pizzas
+                et des promotions alléchantes directement dans votre boîte mail !
+              </p>
+            </div>
+            <div className='flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md lg:max-w-none mx-auto lg:mx-0'>
+              <Input
+                type='email'
+                placeholder='Entrez votre adresse e-mail'
+                className='h-12 md:h-14 px-4 md:px-6 rounded-2xl bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-orange-500 focus:ring-orange-500/20 text-base md:text-lg shadow-sm'
+              />
+              <Button className='h-12 md:h-14 px-6 md:px-8 rounded-2xl bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 hover:from-red-600 hover:via-orange-600 hover:to-yellow-600 text-white font-semibold transition-all duration-200 hover:scale-105 border-0 text-base md:text-lg whitespace-nowrap shadow-lg'>
+                S'abonner
+                <Send className='ml-2 h-4 w-4 md:h-5 md:w-5' />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contenu principal du pied de page */}
+      <div className='relative container mx-auto px-4 py-12 md:py-16'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12'>
+          {/* Section marque */}
+          <div className='lg:col-span-2 space-y-4 md:space-y-6 text-center md:text-left'>
+            <div className='flex items-center justify-center md:justify-start space-x-3'>
+              <div className='w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 rounded-2xl flex items-center justify-center'>
+                <Pizza className='h-4 w-4 md:h-5 md:w-5 text-white' />
+              </div>
+              <div>
+                <h2 className='text-xl md:text-2xl font-black'>
+                  <span className='bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent'>
+                    RimPizza
+                  </span>
+                </h2>
+                <p className='text-xs md:text-sm text-gray-500'>
+                  Authentique italien depuis 2019
+                </p>
+              </div>
+            </div>
+
+            <p className='text-gray-600 leading-relaxed text-base md:text-lg'>
+              Nous sommes passionnés par l&apos;art de vous offrir une expérience
+              de pizza italienne authentique avec des fours traditionnels au feu
+              de bois et les meilleurs ingrédients importés.
+            </p>
+
+            {/* Réseaux sociaux */}
+            <div>
+              <h4 className='font-bold text-base md:text-lg mb-3 md:mb-4 text-gray-900'>
+                Suivez-nous
+              </h4>
+              <div className='flex justify-center md:justify-start space-x-3 md:space-x-4'>
+                {[
+                  { icon: Facebook, href: '#', color: 'hover:text-blue-600' },
+                  { icon: Instagram, href: '#', color: 'hover:text-pink-600' },
+                  { icon: Twitter, href: '#', color: 'hover:text-blue-500' },
+                  { icon: Youtube, href: '#', color: 'hover:text-red-600' },
+                ].map((social, index) => (
+                  <Link
+                    key={index}
+                    href={social.href}
+                    className={`w-10 h-10 md:w-12 md:h-12 bg-gray-100 hover:bg-gray-200 rounded-2xl flex items-center justify-center transition-all duration-200 hover:scale-110 text-gray-600 ${social.color} border border-gray-200`}
+                  >
+                    <social.icon className='h-4 w-4 md:h-5 md:w-5' />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Liens rapides */}
+          <div className='space-y-4 md:space-y-6 text-center md:text-left'>
+            <h4 className='font-bold text-base md:text-lg text-gray-900'>
+              Liens rapides
+            </h4>
+            <ul className='space-y-2 md:space-y-3'>
+              {[
+                { name: 'Notre menu', href: '/menu' },
+                { name: 'Commander en ligne', href: '/order' },
+                { name: 'Suivre ma commande', href: '/track' },
+                { name: 'Nos restaurants', href: '/locations' },
+                { name: 'Carrières', href: '/careers' },
+                { name: 'Franchise', href: '/franchise' },
+              ].map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className='text-gray-600 hover:text-orange-600 transition-colors duration-200 hover:translate-x-1 inline-block text-sm md:text-base'
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Service client */}
+          <div className='space-y-4 md:space-y-6 text-center md:text-left'>
+            <h4 className='font-bold text-base md:text-lg text-gray-900'>
+              Service client
+            </h4>
+            <ul className='space-y-2 md:space-y-3'>
+              {[
+                { name: "Centre d'aide", href: '/help' },
+                { name: 'Nous contacter', href: '/contact' },
+                { name: 'Sécurité alimentaire', href: '/safety' },
+                { name: 'Infos nutritionnelles', href: '/nutrition' },
+                { name: 'Infos allergènes', href: '/allergens' },
+                { name: 'Votre avis', href: '/feedback' },
+              ].map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className='text-gray-600 hover:text-orange-600 transition-colors duration-200 hover:translate-x-1 inline-block text-sm md:text-base'
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Infos de contact */}
+          <div className='space-y-4 md:space-y-6 text-center md:text-left'>
+            <h4 className='font-bold text-base md:text-lg text-gray-900'>
+              Contactez-nous
+            </h4>
+            <div className='space-y-3 md:space-y-4'>
+              <div className='flex items-start justify-center md:justify-start space-x-3'>
+                <div className='w-8 h-8 md:w-10 md:h-10 bg-red-100 rounded-xl flex items-center justify-center mt-1'>
+                  <MapPin className='h-4 w-4 md:h-5 md:w-5 text-red-600' />
+                </div>
+                <div className='text-left'>
+                  <p className='text-gray-900 font-medium text-sm md:text-base'>
+                    123 Rue de l'espoir
+                  </p>
+                  <p className='text-gray-500 text-xs md:text-sm'>
+                    Centre-ville, Noukchout 10001
+                  </p>
+                </div>
+              </div>
+
+              <div className='flex items-start justify-center md:justify-start space-x-3'>
+                <div className='w-8 h-8 md:w-10 md:h-10 bg-orange-100 rounded-xl flex items-center justify-center mt-1'>
+                  <Phone className='h-4 w-4 md:h-5 md:w-5 text-orange-600' />
+                </div>
+                <div className='text-left'>
+                  <p className='text-gray-900 font-medium text-sm md:text-base'>
+                    +222 32323232
+                  </p>
+                  <p className='text-gray-500 text-xs md:text-sm'>
+                    Ligne de commande 24/7
+                  </p>
+                </div>
+              </div>
+
+              <div className='flex items-start justify-center md:justify-start space-x-3'>
+                <div className='w-8 h-8 md:w-10 md:h-10 bg-yellow-100 rounded-xl flex items-center justify-center mt-1'>
+                  <Clock className='h-4 w-4 md:h-5 md:w-5 text-yellow-600' />
+                </div>
+                <div className='text-left'>
+                  <p className='text-gray-900 font-medium text-sm md:text-base'>
+                    11h - 23h
+                  </p>
+                  <p className='text-gray-500 text-xs md:text-sm'>
+                    Livraison quotidienne
+                  </p>
+                </div>
+              </div>
+
+              <div className='flex items-start justify-center md:justify-start space-x-3'>
+                <div className='w-8 h-8 md:w-10 md:h-10 bg-purple-100 rounded-xl flex items-center justify-center mt-1'>
+                  <Pocket className='h-4 w-4 md:h-5 md:w-5 text-purple-600' />
+                </div>
+                <div className='text-left'>
+                  <p className='text-gray-900 font-medium text-sm md:text-base clamp'>
+                    hello@sahand.com
+                  </p>
+                  <p className='text-gray-500 text-xs md:text-sm'>
+                    Support client
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Labels de confiance */}
+      <div className='relative border-t border-gray-200'>
+        <div className='container mx-auto px-4 py-6 md:py-8'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center'>
+            {[
+              {
+                icon: Shield,
+                title: 'Sûr & sécurisé',
+                subtitle: 'Protégé par SSL',
+                bgColor: 'bg-blue-100',
+                iconColor: 'text-blue-600',
+              },
+              {
+                icon: Truck,
+                title: 'Livraison rapide',
+                subtitle: '25 min en moyenne',
+                bgColor: 'bg-green-100',
+                iconColor: 'text-green-600',
+              },
+              {
+                icon: CreditCard,
+                title: 'Paiement facile',
+                subtitle: 'Toutes cartes acceptées',
+                bgColor: 'bg-indigo-100',
+                iconColor: 'text-indigo-600',
+              },
+              {
+                icon: Award,
+                title: 'Qualité garantie',
+                subtitle: '100% frais',
+                bgColor: 'bg-amber-100',
+                iconColor: 'text-amber-600',
+              },
+            ].map((badge, index) => (
+              <div
+                key={index}
+                className='flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-3'
+              >
+                <div
+                  className={`w-8 h-8 md:w-10 md:h-10 ${badge.bgColor} rounded-xl flex items-center justify-center`}
+                >
+                  <badge.icon
+                    className={`h-4 w-4 md:h-5 md:w-5 ${badge.iconColor}`}
+                  />
+                </div>
+                <div className='text-center md:text-left'>
+                  <p className='text-gray-900 font-medium text-xs md:text-sm'>
+                    {badge.title}
+                  </p>
+                  <p className='text-gray-500 text-xs'>{badge.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Barre du bas */}
+      <div className='relative border-t border-gray-200 bg-gray-50'>
+        <div className='container mx-auto px-4 py-4 md:py-6'>
+          <div className='flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0'>
+            <div className='flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6 text-gray-500 text-xs md:text-sm text-center'>
+              <p>&copy; 2025 RimPizza. Tous droits réservés.</p>
+              <div className='flex flex-wrap justify-center space-x-3 md:space-x-4'>
+                <Link
+                  href='/privacy'
+                  className='hover:text-orange-600 transition-colors'
+                >
+                  Politique de confidentialité
+                </Link>
+                <Link
+                  href='/terms'
+                  className='hover:text-orange-600 transition-colors'
+                >
+                  Conditions d&apos;utilisation
+                </Link>
+                <Link
+                  href='/cookies'
+                  className='hover:text-orange-600 transition-colors'
+                >
+                  Politique des cookies
+                </Link>
+              </div>
+            </div>
+            <div className='flex items-center space-x-2 text-gray-500 text-xs md:text-sm'>
+              <Heart className='h-4 w-4 md:h-5 md:w-5 text-red-500' />
+              <span>Fait avec amour à Noukchout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
